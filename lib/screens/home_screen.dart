@@ -190,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
-      physics: AlwaysScrollableScrollPhysics(),
+      physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.all(8.0),
       itemCount: 8,
       itemBuilder: (context, index) {
