@@ -197,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
       scrollDirection: Axis.vertical,
       physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.all(8.0),
-      itemCount: 4,
+      itemCount: 6,
       itemBuilder: (context, index) {
         return Container(
           width: double.infinity,

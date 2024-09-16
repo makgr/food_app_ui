@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/constant/app_color.dart';
+import 'package:food_app_ui/screens/home_screen.dart';
 
 class BottomAppBarMenu extends StatefulWidget {
   const BottomAppBarMenu({super.key});
@@ -26,7 +27,13 @@ class _BottomAppBarMenuState extends State<BottomAppBarMenu> {
               Icons.home_outlined,
               color: AppColor.bottomAppbarIconColor,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(
+                builder: (context) {
+                  return HomeScreen();
+                },
+              ));
+            },
           ),
           IconButton(
             icon: const Icon(
