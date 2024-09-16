@@ -11,4 +11,6 @@ class AppColor {
   static const itemListShadowColor = Color(0x21000000);
   static const itemListShapeColor = Colors.white;
   static const itemListStarColor = Color(0xffFF9633);
+  static const floatingActionButtonColor = Color(0xFFEF2A39);
+  static const floatingActionIconColor = Colors.white;
 }

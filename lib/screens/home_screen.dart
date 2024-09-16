@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constant/app_color.dart';
+import 'floating_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -41,6 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      floatingActionButton: FloatingButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
@@ -192,7 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
       scrollDirection: Axis.vertical,
       physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.all(8.0),
-      itemCount: 8,
+      itemCount: 4,
       itemBuilder: (context, index) {
         return Container(
           width: double.infinity,
