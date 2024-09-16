@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.only(left: 10.0, right: 10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.07,
@@ -52,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Text(
                 'Foodie',
                 style: TextStyle(
-                  color: Color(0xFF3C2F2F),
+                  color: AppColor.homeTitleColor,
                   fontSize: 45,
                   fontFamily: 'Lobster',
                   fontWeight: FontWeight.w400,
@@ -63,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 60,
                 height: 60,
                 decoration: ShapeDecoration(
-                  color: Color(0xFFD9D9D9),
+                  color: AppColor.homeHeaderShapeColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -78,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Text(
             'Order your favourite food!',
             style: TextStyle(
-              color: Color(0xFF6A6A6A),
+              color: AppColor.homeHeaderSubtitleTextColor,
               fontSize: 18,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w500,
@@ -140,21 +141,13 @@ class _HomeScreenState extends State<HomeScreen> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
-          shadows: [
-            BoxShadow(
-              color: Color(0x3F000000),
-              blurRadius: 18,
-              offset: Offset(0, 10),
-              spreadRadius: -1,
-            ),
-          ],
         ),
         child: Center(
           child: FittedBox(
             child: Text(
               category_name,
               style: TextStyle(
-                color: Color(0xFFF5F5F5),
+                color: AppColor.categoryItemTextColor,
                 fontSize: 16,
                 fontFamily: "Poppins",
                 fontWeight: FontWeight.w500,
@@ -182,5 +175,9 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
     );
+  }
+
+  Widget _itemList() {
+    return GridView.builder(gridDelegate: SliverGridDelegate(), itemBuilder: (){}.);
   }
 }
