@@ -14,7 +14,7 @@ class _BottomAppBarMenuState extends State<BottomAppBarMenu> {
   Widget build(BuildContext context) {
     return BottomAppBar(
       padding: EdgeInsets.symmetric(horizontal: 10),
-      height: 60,
+      height: MediaQuery.of(context).size.height * 0.08,
       color: AppColor.primaryColor,
       shape: CircularNotchedRectangle(),
       notchMargin: 5,
