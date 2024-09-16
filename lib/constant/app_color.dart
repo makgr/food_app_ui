@@ -8,4 +8,7 @@ class AppColor {
   static const homeHeaderSubtitleTextColor = Color(0xFF6A6A6A);
   static const categoryItemShadowColor = Color(0xfF000000);
   static const categoryItemTextColor = Color(0xFFF5F5F5);
+  static const itemListShadowColor = Color(0x21000000);
+  static const itemListShapeColor = Colors.white;
+  static const itemListStarColor = Color(0xffFF9633);
 }

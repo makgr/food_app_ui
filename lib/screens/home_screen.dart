@@ -15,26 +15,30 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.only(left: 10.0, right: 10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.07,
-            ),
-            _homeHeader(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.03,
-            ),
-            _searchSection(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.03,
-            ),
-            _categorySlider(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.03,
-            ),
-          ],
+        child: SingleChildScrollView(
+          physics: AlwaysScrollableScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.07,
+              ),
+              _homeHeader(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              _searchSection(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              _categorySlider(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              _itemList(),
+            ],
+          ),
         ),
       ),
     );
@@ -178,6 +182,101 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _itemList() {
-    return GridView.builder(gridDelegate: SliverGridDelegate(), itemBuilder: (){}.);
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 8.0,
+        crossAxisSpacing: 8.0,
+      ),
+      shrinkWrap: true,
+      scrollDirection: Axis.vertical,
+      physics: AlwaysScrollableScrollPhysics(),
+      padding: EdgeInsets.all(8.0),
+      itemCount: 8,
+      itemBuilder: (context, index) {
+        return Container(
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height * 0.15,
+          decoration: ShapeDecoration(
+            color: AppColor.itemListShapeColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            shadows: [
+              BoxShadow(
+                color: AppColor.itemListShadowColor,
+                blurRadius: 17,
+                offset: Offset(0, 6),
+                spreadRadius: 0,
+              )
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.065,
+                ),
+                child: Container(
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 0.145,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/image6.png"),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 9.0, top: 4.0),
+                child: Text(
+                  'Cheeseburger \n',
+                  style: TextStyle(
+                    color: Color(0xFF3C2F2F),
+                    fontSize: 13,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                    height: 0.08,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 10.0, top: 13.0),
+                child: Text(
+                  "\n Wendy's Burger",
+                  style: TextStyle(
+                    color: Color(0xFF3C2F2F),
+                    fontSize: 13,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w400,
+                    height: 0.04,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(6.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.star,
+                          color: AppColor.itemListStarColor,
+                        ),
+                        Text("4.9"),
+                      ],
+                    ),
+                    Icon(Icons.favorite_border_outlined),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 }
