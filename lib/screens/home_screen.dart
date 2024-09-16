@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constant/app_color.dart';
+import 'bottom_appbar_menu.dart';
 import 'floating_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -44,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBarMenu(),
     );
   }
 

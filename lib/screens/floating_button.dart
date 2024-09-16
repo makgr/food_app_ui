@@ -6,8 +6,8 @@ class FloatingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
+    return FloatingActionButton(
+      onPressed: () {},
       child: Container(
         width: 72,
         height: 72,
