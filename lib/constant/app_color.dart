@@ -14,4 +14,5 @@ class AppColor {
   static const floatingActionButtonColor = Color(0xFF36622b);
   static const floatingActionIconColor = Colors.white;
   static const bottomAppbarIconColor = Colors.white;
+  static const itemDetailsTextColor = Color(0xff6A6A6A);
 }
