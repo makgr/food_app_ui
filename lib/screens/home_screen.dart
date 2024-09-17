@@ -127,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: MediaQuery.of(context).size.width * 0.15,
           height: MediaQuery.of(context).size.height * 0.07,
           decoration: ShapeDecoration(
-            color: Color(0xFF36622b),
+            color: AppColor.primaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
