@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constant/app_color.dart';
+import 'order_details_screen.dart';
 
 class ItemDetailsScreen extends StatefulWidget {
   const ItemDetailsScreen({super.key});
@@ -222,21 +223,30 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 70,
-                    width: MediaQuery.of(context).size.width * 0.530,
-                    padding: EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: AppColor.orderButtonTextColor,
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "ORDER NOW",
-                        style: TextStyle(
-                            color: AppColor.priceButtonTextColor,
-                            fontSize: 22,
-                            fontWeight: FontWeight.w500),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return OrderDetailsScreen();
+                        },
+                      ));
+                    },
+                    child: Container(
+                      height: 70,
+                      width: MediaQuery.of(context).size.width * 0.530,
+                      padding: EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: AppColor.orderButtonTextColor,
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "ORDER NOW",
+                          style: TextStyle(
+                              color: AppColor.priceButtonTextColor,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ),
                   ),
