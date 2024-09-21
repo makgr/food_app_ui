@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constant/app_color.dart';
+import 'order_success_screen.dart';
 
 class OrderDetailsScreen extends StatefulWidget {
   const OrderDetailsScreen({super.key});
@@ -265,21 +266,30 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                         },
                       ));
                     },
-                    child: Container(
-                      height: 70,
-                      width: MediaQuery.of(context).size.width * 0.530,
-                      padding: EdgeInsets.all(16.0),
-                      decoration: BoxDecoration(
-                        color: AppColor.orderButtonTextColor,
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Pay Now",
-                          style: TextStyle(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) {
+                          return OrderSuccessScreen();
+                        }));
+                      },
+                      child: Container(
+                        height: 70,
+                        width: MediaQuery.of(context).size.width * 0.530,
+                        padding: EdgeInsets.all(16.0),
+                        decoration: BoxDecoration(
+                          color: AppColor.orderButtonTextColor,
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Pay Now",
+                            style: TextStyle(
                               color: AppColor.priceButtonTextColor,
                               fontSize: 22,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         ),
                       ),
                     ),
