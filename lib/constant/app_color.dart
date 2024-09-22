@@ -23,4 +23,5 @@ class AppColor {
   static const orderDetailsSummaryTotalPriceTextColor = Color(0xff808080);
   static const orderSuccessScreenBackgroundColor = Color(0xffD9D9D9);
   static const orderSuccessScreenContainerBackgroundColor = Colors.white;
+  static const profileScreenAppBarIconColor = Colors.white;
 }

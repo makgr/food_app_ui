@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_app_ui/constant/app_color.dart';
 import 'package:food_app_ui/screens/home_screen.dart';
 
+import 'user_profile_screen.dart';
+
 class BottomAppBarMenu extends StatefulWidget {
   const BottomAppBarMenu({super.key});
 
@@ -40,7 +42,13 @@ class _BottomAppBarMenuState extends State<BottomAppBarMenu> {
               Icons.person_3_outlined,
               color: AppColor.bottomAppbarIconColor,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return UserProfileScreen();
+                },
+              ));
+            },
           ),
           IconButton(
             icon: Icon(

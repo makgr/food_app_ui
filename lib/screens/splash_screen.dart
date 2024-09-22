@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
             end: Alignment(-0.15, 0.99),
             colors: [
               AppColor.secondaryColor,
-              AppColor.secondaryColor,
+              AppColor.primaryColor,
             ],
           ),
         ),
