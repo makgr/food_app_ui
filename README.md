@@ -1,8 +1,13 @@
 # food_app_ui
 
-A new Flutter project.
+Foodie
 
-## Getting Started
+## Screenshot
+
+
+https://github.com/user-attachments/assets/73608154-8a28-4faa-a036-2f671fb8503b
+
+
 
 This project is a starting point for a Flutter application.
 
