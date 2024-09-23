@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_app_ui/constant/app_color.dart';
 import 'package:food_app_ui/screens/home_screen.dart';
 
+import 'customer_support_screen.dart';
 import 'user_profile_screen.dart';
 
 class BottomAppBarMenu extends StatefulWidget {
@@ -55,7 +56,13 @@ class _BottomAppBarMenuState extends State<BottomAppBarMenu> {
               Icons.message_outlined,
               color: AppColor.bottomAppbarIconColor,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return CustomerSupportScreen();
+                },
+              ));
+            },
           ),
           IconButton(
             icon: Icon(
